@@ -1,0 +1,47 @@
+{% set name = "mrtrix3" %}
+{% set version = "3.0_RC3_latest" %}
+
+package:
+  name: {{ name }}
+  version: {{ version }}
+
+source:
+  git_rev: {{ version }}
+  git_url: https://github.com/MRtrix3/mrtrix3.git
+
+requirements:
+  build:
+    - git
+    - python
+    - eigen
+    - libtiff
+    - zlib
+    - fftw
+    - qt
+    - {{ compiler('cxx') }}
+    - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
+    - {{ cdt('libx11-devel') }}          # [linux]
+    - {{ cdt('libxext-devel') }}         # [linux]
+    - {{ cdt('libxrender-devel') }}      # [linux]
+    - {{ cdt('mesa-libgl-devel') }}      # [linux]
+    - {{ cdt('mesa-libegl-devel') }}     # [linux]
+    - {{ cdt('mesa-dri-drivers') }}      # [linux]
+    - {{ cdt('libxau-devel') }}          # [linux]
+    - {{ cdt('libselinux-devel') }}      # [linux]
+    - {{ cdt('libxdamage') }}            # [linux]
+    - {{ cdt('libxdamage-devel') }}      # [linux]
+    - {{ cdt('libxfixes') }}             # [linux]
+    - {{ cdt('libxfixes-devel') }}       # [linux]
+    - {{ cdt('libxxf86vm') }}            # [linux]
+    - {{ cdt('libxxf86vm-devel') }}      # [linux]
+
+  run:
+    - qt
+    - zlib
+    - libtiff
+    - fftw
+
+about:
+  home: https://www.mrtrix.org
+  license: https://github.com/MRtrix3/mrtrix3/blob/master/LICENCE.txt
+
