@@ -12,12 +12,12 @@ source:
 requirements:
   build:
     - git
-    - python
-    - eigen
-    - libtiff
-    - zlib
-    - fftw
-    - qt
+    - python >=2.7
+    - eigen >=3.2
+    - libtiff >=4.0
+    - zlib 
+    - fftw >=3.0
+    - qt >=5.7
     - {{ compiler('cxx') }}
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
@@ -36,10 +36,10 @@ requirements:
     - {{ cdt('libxxf86vm-devel') }}      # [linux]
 
   run:
-    - qt
-    - zlib
-    - libtiff
-    - fftw
+    - qt >=5.7
+    - zlib 
+    - libtiff >=4.0
+    - fftw >=3.0
 
 about:
   home: https://www.mrtrix.org
