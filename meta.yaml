@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  git_url: https://github.com/GIT_REPO.git
+  git_url: https://github.com/GIT_USER/mrtrix3.git
   git_rev: {{ version }}
 
 requirements:
@@ -44,5 +44,5 @@ requirements:
 
 about:
   home: https://www.mrtrix.org
-  license: https://github.com/GIT_REPO/blob/master/LICENCE.txt
+  license: https://github.com/GIT_USER/mrtrix3/blob/master/LICENCE.txt
 
