@@ -1,13 +1,13 @@
 {% set name = "mrtrix3" %}
-{% set version = "3.0_RC3_latest" %}
+{% set version = TAGNAME %}
 
 package:
   name: {{ name }}
   version: {{ version }}
 
 source:
-  git_rev: {{ version }}
   git_url: https://github.com/MRtrix3/mrtrix3.git
+  git_rev: TAGNAME
 
 requirements:
   build:
@@ -15,7 +15,7 @@ requirements:
     - python >=2.7
     - eigen >=3.2
     - libtiff >=4.0
-    - zlib 
+    - zlib
     - fftw >=3.0
     - qt >=5.7
     - {{ compiler('cxx') }}
