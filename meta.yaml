@@ -16,6 +16,7 @@ requirements:
     - eigen >=3.2
     - libtiff >=4.0
     - zlib
+    - pkg-config
     - fftw >=3.0
     - qt >=5.7
     - {{ compiler('cxx') }}
