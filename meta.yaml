@@ -1,5 +1,5 @@
 {% set name = "mrtrix3" %}
-{% set version = TAGNAME %}
+{% set version = "TAGNAME" %}
 
 package:
   name: {{ name }}

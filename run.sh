@@ -2,7 +2,7 @@
 
 # usage: run.sh tag user/repo prefix
 
-set -e
+set -ex
 
 sed -i "s|TAGNAME|$1|g" meta.yaml
 sed -i "s|GIT_REPO|$2|g" meta.yaml
