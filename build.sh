@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 unset LD LINK ARCH
 export CFLAGS="-idirafter $CONDA_PREFIX/include" 
 export LDFLAGS="-L$CONDA_PREFIX/lib"

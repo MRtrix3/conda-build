@@ -13,7 +13,7 @@ else
   ${CONDA}conda-build .
 
   pkgfile=$(${CONDA}conda-build . --output)
-  mv $pkgfile $3-$pkgfile
+  mv $pkgfile $3-$(basename $pkgfile)
 
 fi
 
