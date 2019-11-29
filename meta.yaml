@@ -7,7 +7,7 @@ package:
 
 source:
   git_url: https://github.com/GIT_REPO.git
-  git_rev: TAGNAME
+  git_rev: {{ version }}
 
 requirements:
   build:
