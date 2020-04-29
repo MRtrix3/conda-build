@@ -3,7 +3,7 @@
 A pre-compiled package generated using this recipe is already available
 directly, using this command:
 ```
-$ conda install -c jdtournier mrtrix3
+$ conda install -c MRtrix3 mrtrix3
 ```
 
 This repo holds the recipe to generate this package, most users should't need
