@@ -18,7 +18,7 @@ requirements:
     - zlib
     - pkg-config
     - fftw >=3.0
-    - qt >=5.7
+    - qt ==5.15
     - {{ compiler('cxx') }}
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
@@ -37,7 +37,7 @@ requirements:
     - {{ cdt('libxxf86vm-devel') }}      # [linux]
 
   run:
-    - qt >=5.7
+    - qt ==5.15
     - zlib 
     - libtiff >=4.0
     - fftw >=3.0
