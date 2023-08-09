@@ -12,8 +12,9 @@ to interact with this repo.
 # How to use
 
 ```
-git clone https://github.com/MRtrix3/conda-build.git mrtrix3
-conda-build mrtrix3
+git clone https://github.com/MRtrix3/conda-build.git
+cd conda-build
+./run.sh 3.0.4 mrtrix3 mrtrix3
 
 anaconda upload <path_to_package>
 ```
