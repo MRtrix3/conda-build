@@ -6,12 +6,9 @@ else
 
   set -ex
 
-  sed -i'.orig' -e " s|TAGNAME|$1|g" -e "s|GIT_USER|$2|g" meta.yaml
+  sed -e " s|TAGNAME|$1|g" -e "s|GIT_USER|$2|g" meta.yaml.in > meta.yaml
 
-  "$CONDA"/bin/conda build .
-
-  pkgfile=$("$CONDA"/bin/conda build . --output)
-  mv $pkgfile $3-$(basename $pkgfile)
+  pkgfile=$("$CONDA"/bin/conda-build . --output-folder ./build)
 
 fi
 
