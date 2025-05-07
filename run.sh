@@ -1,14 +1,16 @@
 #!/bin/bash
 
-if [[ $# -ne 3 ]]; then
-  echo usage: run.sh tag user prefix
+if [[ $# -lt 3 ]]; then
+  echo usage: run.sh tag user suffix
 else
 
   set -ex
 
   sed -e " s|TAGNAME|$1|g" -e "s|GIT_USER|$2|g" meta.yaml.in > meta.yaml
 
-  pkgfile=$("$CONDA"/bin/conda-build . --output-folder ./build)
+  "$CONDA"/bin/conda-build .
+  pkgfile=$("$CONDA"/bin/conda-build . --output)
+  cp $pkgfile $(basename $pkgfile)-$3
 
 fi
 
