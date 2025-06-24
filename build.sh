@@ -20,7 +20,15 @@ else
     done
     echo 'alias mrview="QT_XCB_GL_INTEGRATION= mrview"' > "${PREFIX}/etc/conda/activate.d/${PKG_NAME}_activate.sh"
     echo 'alias shview="QT_XCB_GL_INTEGRATION= shview"' >> "${PREFIX}/etc/conda/activate.d/${PKG_NAME}_activate.sh"
-    echo 'unalias mrview shview' > "${PREFIX}/etc/conda/deactivate.d/${PKG_NAME}_deactivate.sh"
+    # Bash requires doc delimiters be in column 0
+    cat > "${PREFIX}/etc/conda/deactivate.d/${PKG_NAME}_deactivate.sh" <<'EOF'
+if alias mrview >/dev/null 2>&1; then
+    unalias mrview
+fi
+if alias shview >/dev/null 2>&1; then
+    unalias shview
+fi
+EOF
 fi
 
 export EIGEN_CFLAGS="-idirafter $CONDA_PREFIX/include/eigen3"
@@ -29,4 +37,3 @@ mkdir -p "$PREFIX/bin"
 mkdir -p "$PREFIX/lib"
 mkdir -p "$PREFIX/share"
 ./configure -conda && ./build && cp -r bin lib share "$PREFIX"
-
