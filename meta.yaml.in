@@ -19,8 +19,7 @@ requirements:
     - pkg-config
     - fftw >=3.0
     - qt >=5.15,<6
-    - {{ compiler('cxx','16') }}         # [osx]
-    - {{ compiler('cxx') }}              # [linux]
+    - {{ compiler('cxx') }}
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
     - {{ cdt('libxext-devel') }}         # [linux]
@@ -51,11 +50,10 @@ requirements:
 
   run:
     - qt >=5.15,<6
-    - zlib 
+    - zlib
     - libtiff >=4.5.1
     - fftw >=3.0
 
 about:
   home: https://www.mrtrix.org
   license: https://github.com/GIT_USER/mrtrix3/blob/master/LICENCE.txt
-

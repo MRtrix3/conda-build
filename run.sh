@@ -8,9 +8,17 @@ else
 
   sed -e " s|TAGNAME|$1|g" -e "s|GIT_USER|$2|g" meta.yaml.in > meta.yaml
 
+  # inject an extra build-variant pin for macOS
+  cat >> conda_build_config.yaml <<'YAML'
+cxx_compiler_version:
+  - 16        # [osx]
+YAML
+
+
+  $CONDA/bin/conda config --env --add channels conda-forge
+
   "$CONDA"/bin/conda-build .
   pkgfile=$("$CONDA"/bin/conda-build . --output)
   cp $pkgfile $(basename $pkgfile)-$3
 
 fi
-
