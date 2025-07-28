@@ -12,6 +12,10 @@ else
   cat >> conda_build_config.yaml <<'YAML'
 cxx_compiler_version:
   - 16        # [osx]
+c_stdlib:
+  - sysroot         # [linux]
+c_stdlib_version:   # [linux]
+  - 2.17            # [linux]
 YAML
 
 

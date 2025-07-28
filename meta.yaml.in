@@ -20,6 +20,7 @@ requirements:
     - fftw >=3.0
     - qt >=5.15,<6
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
     - {{ cdt('xorg-x11-proto-devel') }}  # [linux]
     - {{ cdt('libx11-devel') }}          # [linux]
     - {{ cdt('libxext-devel') }}         # [linux]
