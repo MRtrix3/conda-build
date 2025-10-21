@@ -13,6 +13,7 @@ else
 cxx_compiler_version:
   - 16        # [osx]
 c_stdlib:
+  - macosx_deployment_target # [osx]
   - sysroot         # [linux]
 c_stdlib_version:   # [linux]
   - 2.17            # [linux]
